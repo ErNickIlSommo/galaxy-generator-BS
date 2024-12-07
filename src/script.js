@@ -23,9 +23,9 @@ const parameters = {
   size: 0.001,
   radius: 1,
   branches: 3,
-  spin: -3.15,
-  randomness: 0.2,
-  randomnessPower: 3,
+  spin: -4.15,
+  randomness: 0.6,
+  randomnessPower: 5.2,
   insideColor: "#ff6030",
   outsideColor: "#1b3984",
 };
@@ -186,9 +186,10 @@ const camera = new THREE.PerspectiveCamera(
   0.1,
   100
 );
-camera.position.x = 3;
-camera.position.y = 3;
-camera.position.z = 3;
+camera.position.x = 0;
+camera.position.y = 2;
+camera.position.z = 0;
+camera.lookAt(points);
 scene.add(camera);
 
 // Controls
@@ -211,6 +212,8 @@ const clock = new THREE.Clock();
 
 const tick = () => {
   const elapsedTime = clock.getElapsedTime();
+
+  points.rotation.y = elapsedTime * 0.5;
 
   // Update controls
   controls.update();
