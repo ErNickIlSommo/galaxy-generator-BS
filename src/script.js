@@ -25,7 +25,7 @@ const parameters = {
   branches: 3,
   spin: -4.15,
   randomness: 0.6,
-  randomnessPower: 5.2,
+  randomnessPower: 2.1422,
   insideColor: "#ff6030",
   outsideColor: "#1b3984",
 };
@@ -187,10 +187,16 @@ const camera = new THREE.PerspectiveCamera(
   100
 );
 camera.position.x = 0;
-camera.position.y = 2;
-camera.position.z = 0;
+camera.position.y = 1.3;
+camera.position.z = 1.4;
 camera.lookAt(points);
 scene.add(camera);
+
+const camUI = gui.addFolder("camera");
+camUI.add(camera.position, "x").listen().disable();
+camUI.add(camera.position, "y").listen().disable();
+camUI.add(camera.position, "z").listen().disable();
+camUI.hide();
 
 // Controls
 const controls = new OrbitControls(camera, canvas);
