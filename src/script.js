@@ -142,7 +142,7 @@ const generateGalaxy = () => {
 
   material = new THREE.PointsMaterial({
     size: parameters.size,
-    // sizeAttenuation: false,
+    sizeAttenuation: false,
     depthWrite: false,
     blending: THREE.AdditiveBlending,
     vertexColors: true,
