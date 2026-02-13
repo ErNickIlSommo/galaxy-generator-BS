@@ -15,3 +15,5 @@ npm run dev
 npm run build
 ```
 # galaxy-generator-BS
+
+enjoy
